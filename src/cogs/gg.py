@@ -1,4 +1,5 @@
 import discord
+import random
 import urllib.request
 from discord.ext import commands
 
@@ -47,6 +48,19 @@ class GGBot(commands.Cog):
             await ctx.send(response.read()
                                    .decode("utf-8")
                                    .strip("[\"\"]"))
+
+    @commands.command()
+    async def lexi(self, ctx, *args):
+        lexi_dog_pics = [
+            "https://cdn.discordapp.com/attachments/738239982489174047/739628777440673812/image0.jpg",
+            "https://cdn.discordapp.com/attachments/738239982489174047/739628777767960656/image1.jpg",
+            "https://cdn.discordapp.com/attachments/738239982489174047/739628778069688380/image2.jpg",
+            "https://cdn.discordapp.com/attachments/738239982489174047/739628778355163197/image3.jpg",
+            "https://cdn.discordapp.com/attachments/738239982489174047/739628778707222588/image4.jpg",
+            "https://cdn.discordapp.com/attachments/738239982489174047/739628778896228392/image5.jpg"
+        ]
+
+        await ctx.send(random.choice(lexi_dog_pics))
 
 
     @commands.command()
