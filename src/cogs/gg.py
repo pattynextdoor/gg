@@ -1,4 +1,5 @@
 import discord
+import urllib.request
 from discord.ext import commands
 
 class GGBot(commands.Cog):
@@ -32,6 +33,23 @@ class GGBot(commands.Cog):
             await ctx.send(f'Arena ID set to \"{self.arena_id}\"')
 
     @commands.command()
+    async def hiba(self, ctx, *args):
+        channel_from = ctx.message.channel.id
+        url = 'http://shibe.online/api/shibes'
+
+        headers = {
+            'User-Agent': 'Mozilla/5.0'
+        }
+
+        req = urllib.request.Request(url, headers=headers)
+        
+        with urllib.request.urlopen(req) as response:
+            await ctx.send(response.read()
+                                   .decode("utf-8")
+                                   .strip("[\"\"]"))
+
+
+    @commands.command()
     async def ban(self, ctx, *args):
         await ctx.send(f'{args[0]} removed from the rankings forever.')
 
@@ -57,9 +75,6 @@ class GGBot(commands.Cog):
 
             msg += "```"
             return msg
-
-        channel_from = ctx.message.channel.id
-        message_author = ctx.message.author
 
         await ctx.send(f'Calculating gg instances...')
 
