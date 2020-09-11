@@ -84,7 +84,7 @@ class GGBot(commands.Cog):
                 author = entry[0]
                 message_count = str(entry[1])
 
-                outgoing_message += f"{str(index)}. {author}: {message_count} gg's\n"
+                msg += f"{str(index)}. {author}: {message_count} gg's\n"
                 index += 1
 
             msg += "```"
