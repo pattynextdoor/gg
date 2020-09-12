@@ -69,7 +69,7 @@ class GGBot(commands.Cog):
 
     @commands.command()
     async def saygg(self, ctx, *args):
-        await ctx.send('gg! :Corrinsmug: ')
+        await ctx.send('gg! <:Corrinsmug:733995137126105158> ')
 
     @commands.command()
     async def gg(self, ctx, *args):
