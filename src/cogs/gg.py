@@ -68,6 +68,10 @@ class GGBot(commands.Cog):
         await ctx.send(f'{args[0]} removed from the rankings forever.')
 
     @commands.command()
+    async def saygg(self, ctx, *args):
+        await ctx.send('gg! :Corrinsmug: ')
+
+    @commands.command()
     async def gg(self, ctx, *args):
         
         def __get_sparring_partners_channel():
