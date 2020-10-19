@@ -79,7 +79,7 @@ class GGBot(commands.Cog):
 
         def isGG(msg):
             msg_lc = msg.lower()
-            return 'gg' in msg_lc
+            return 'gg' or 'good game' in msg_lc
 
         def generateMessage(map):
             msg = """```"""
